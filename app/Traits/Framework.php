@@ -6,14 +6,21 @@ use App\Utils\View;
 
 trait Framework
 {
-    public static function GetHeaders()
+    public static function GetHeaders($styles)
     {
-        return View::render('includes/header');
+        return View::render('includes/header', [
+            'styles' => $styles
+        ]);
     }
 
-    public static function GetFooters()
+    public static function GetFooters($scripts)
     {
-        return View::render('includes/footer');
+        return View::render('includes/footer', [
+            'company' =>  COMPANY,
+            'system' => SYSTEM,
+            'year' => date('Y'),
+            'script' => $scripts
+        ]);
     }
 
     public static function GetSidebar()

@@ -12,15 +12,15 @@ class Page
     /**
      * Método responsável por retornar o index default do sistema
      */
-    public static function geIndex($title, $content)
+    public static function geIndex($title, $content, $styles = NULL, $scripts = NULL)
     {
         return View::render('page', [
             'title' => $title,
-            'header' => self::GetHeaders(),
+            'header' => self::GetHeaders($styles),
             'sidebar' => self::GetSidebar(),
             'topbar' => self::GetTopbar(),
             'content' => $content,
-            'footer' => self::GetFooters(),
+            'footer' => self::GetFooters($scripts),
         ]);
     }
 }
