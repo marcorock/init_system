@@ -23,11 +23,20 @@ trait Framework
         ]);
     }
 
+    /**
+     * Método responsável por retornar uma barra de navegação a direita do sistema.
+     * Precisa definir os parametros desta
+     */
     public static function GetSidebar()
     {
         return View::render('includes/sidebar');
     }
 
+    /**
+     * Método responsável por retornar uma barra de navegação no topo do sistema
+     * Precisa ter dropdown de [ALERTA],[MENSAGEM] e [USER], com informações do usuários
+     * 
+     */
     public static function GetTopbar()
     {
         return View::render('includes/topbar');
